@@ -292,24 +292,130 @@
         </section>
 
         <!-- Testimonials / messages -->
-        <section id="news" class="space-y-6">
-            <h2 class="text-2xl font-semibold">প্রশংসাপত্র</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Testimonial card -->
-                <blockquote class="bg-white p-5 rounded-lg shadow">
-                    <p class="text-gray-700">“অসাধারণ পড়াশোনা পরিবেশ — এখানে শিক্ষার প্রতি যত্ন দেখা যায়।”</p>
-                    <footer class="mt-4 text-sm text-gray-600">— জন দাশ, অভিভাবক</footer>
-                </blockquote>
+        <section id="news" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex items-start justify-between mb-6">
+                <h2 class="text-3xl font-extrabold">স্কুল পরিচালকদের বাণী</h2>
 
-                <blockquote class="bg-white p-5 rounded-lg shadow">
-                    <p class="text-gray-700">“শিক্ষকরা খুবই সহায়ক এবং কাজের প্রতি দায়িত্বশীল।”</p>
-                    <footer class="mt-4 text-sm text-gray-600">— রিতা, alumna</footer>
-                </blockquote>
+                <!-- arrows -->
+                <div class="flex gap-2">
+                    <button id="prevBtn" aria-label="Previous"
+                        class="w-9 h-9 rounded-md border bg-white shadow-sm flex items-center justify-center">
+                        <!-- left arrow -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
 
-                <blockquote class="bg-white p-5 rounded-lg shadow">
-                    <p class="text-gray-700">“পরিষ্কার ও সুব্যবस्थित ক্যাম্পাস। বার্ষিক কার্যক্রমগুলো খুবই সফল।”</p>
-                    <footer class="mt-4 text-sm text-gray-600">— মাসুদ, শিক্ষক</footer>
-                </blockquote>
+                    <button id="nextBtn" aria-label="Next"
+                        class="w-9 h-9 rounded-md bg-green-800 flex items-center justify-center">
+                        <!-- right arrow -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- cards container -->
+            <div id="testimonials" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 0: active (red outline) -->
+                <article class="testimonial-card relative bg-white rounded-xl p-6 shadow-sm border border-transparent"
+                    data-index="0">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/principle.png" alt="আবদুল্লাহ আল মামুন"
+                            class="h-16 w-16 rounded-full object-cover ring-4 ring-green-100 border-2 border-white"
+                            loading="lazy">
+                        <div>
+                            <h3 class="text-base font-semibold">আবদুল্লাহ আল মামুন</h3>
+                            <p class="text-sm text-green-700 mt-1">অধ্যক্ষের বাণী</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-justify leading-relaxed text-gray-700 lg:text-base">
+                        "প্রিয় শিক্ষার্থীবৃন্দ, আজ আমি আপনাদের সামনে দাঁড়িয়েছি একজন শিক্ষক হিসেবে, একজন অভিভাবক
+                        হিসেবে, এবং একজন বন্ধু হিসেবে। আমি আপনাদের বলতেই চাই যে, আপনাদের সকলেই সক্ষম। আপনাদের সকলেই
+                        আপনার সম্পূর্ণ সম্ভাবনায় পৌঁছাতে পারবেন। আপনাদেরকে শুধু মানসিক পরিশ্রম করতে হবে, সহ হতে হবে,
+                        এবং অন্যদের প্রতি শ্রদ্ধাশীল হতে হবে।"
+                    </p>
+
+                    <div class="mt-6">
+                        <button
+                            class="w-full inline-flex items-center justify-center gap-2 bg-green-100 text-green-800 rounded-full py-3 px-4 text-sm font-medium shadow-sm">
+                            <span>আরো পড়ুন</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 1 -->
+                <article class="testimonial-card relative bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+                    data-index="1">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/president.png" alt="কামরুল ইসলাম"
+                            class="h-16 w-16 rounded-full object-cover ring-4 ring-green-100 border-2 border-white"
+                            loading="lazy">
+                        <div>
+                            <h3 class="text-base font-semibold">কামরুল ইসলাম</h3>
+                            <p class="text-sm text-green-700 mt-1">সভাপতি</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-justify leading-relaxed text-gray-700 lg:text-base">
+                        "আমাদের স্কুলের লক্ষ্য হল শিক্ষার্থীদের একটি সুন্দর ও সুস্থ পরিবেশে মানসম্মত শিক্ষা প্রদান করা।
+                        আমরা শিক্ষার্থীদের একদম ভাল মানুষ হিসেবে গড়ে তোলার লক্ষ্যে কাজ করছি। আমাদের উদ্যোগ হল
+                        শিক্ষার্থীদের তাদের সম্পূর্ণ সম্ভাবনায় পৌঁছাতে সাহায্য করা।"
+                    </p>
+
+                    <div class="mt-6">
+                        <button
+                            class="w-full inline-flex items-center justify-center gap-2 bg-green-100 text-green-800 rounded-full py-3 px-4 text-sm font-medium shadow-sm">
+                            <span>আরো পড়ুন</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="testimonial-card relative bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+                    data-index="2">
+                    <div class="flex items-start gap-4">
+                        <img src="/assets/vice_principle.png" alt="মিসেস সালমা আকতার"
+                            class="h-16 w-16 rounded-full object-cover ring-4 ring-green-100 border-2 border-white"
+                            loading="lazy">
+                        <div>
+                            <h3 class="text-base font-semibold">মিসেস সালমা আকতার</h3>
+                            <p class="text-sm text-green-700 mt-1">উপাধ্যক্ষের বাণী</p>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-justify leading-relaxed text-gray-700 lg:text-base">
+                        "প্রিয় শিক্ষার্থীগণ, আজ আমি আপনাদের সামনে দাঁড়িয়েছি একজন শিক্ষক হিসেবে, একজন অভিভাবক হিসেবে,
+                        এবং একজন বন্ধু হিসেবে। আমি শিক্ষার্থীদের প্রতি আমাদের দায়িত্ব পালন করছি এবং প্রতিটি
+                        শিক্ষার্থীকে তার লক্ষ্য অর্জনে সাহায্য করছি।"
+                    </p>
+
+                    <div class="mt-6">
+                        <button
+                            class="w-full inline-flex items-center justify-center gap-2 bg-green-100 text-green-800 rounded-full py-3 px-4 text-sm font-medium shadow-sm">
+                            <span>আরো পড়ুন</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </article>
             </div>
         </section>
 
