@@ -1,265 +1,411 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Homepage — Tailwind</title>
-  <meta name="description" content="Homepage built with TailwindCSS" />
-  <!-- Tailwind Play CDN (good for prototypes). For production, build via PostCSS/CLI -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Optional: improve font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Homepage — Tailwind</title>
+    <meta name="description" content="Homepage built with TailwindCSS" />
+    <!-- Tailwind Play CDN (good for prototypes). For production, build via PostCSS/CLI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Optional: improve font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800">
-  <!-- Skip link for accessibility -->
-  <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 rounded shadow" href="#main">Skip to content</a>
+    <!-- Skip link for accessibility -->
+    <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white p-2 rounded shadow"
+        href="#main">Skip to content</a>
 
-  <!-- HEADER -->
-  <header class="bg-white shadow-sm sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
-        <div class="flex items-center gap-4">
-          <a href="#" class="flex items-center gap-3">
-            <!-- Replace with logo -->
-            <img src="/path/to/logo.png" alt="Logo" class="h-8 w-8 object-contain"/>
-            <span class="text-lg font-semibold">Your Site</span>
-          </a>
+    <!-- HEADER -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- LEFT: logo -->
+                <a href="/" class="flex items-center gap-3">
+                    <img src="/assets/logo.png" alt="logo" class="h-10 w-10 object-contain" />
+                </a>
+
+                <!-- CENTER: desktop nav -->
+                <nav class="hidden md:flex items-center gap-3 flex-1 justify-center">
+                    <!-- Home (active pill) -->
+                    <a href="#"
+                        class="inline-flex items-center px-6 py-2 rounded-full bg-green-800 text-white text-sm font-medium shadow-sm">হোম</a>
+
+                    <!-- Menu items with dropdown arrows -->
+                    <div class="relative">
+                        <button type="button"
+                            class="nav-dropdown-btn inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:text-green-700 focus:outline-none"
+                            aria-expanded="false">
+                            শিক্ষক/শিক্ষিকা
+                            <img src="/assets/ArrowdownIcon.svg" alt="" class="w-3 h-3" aria-hidden="true" />
+                        </button>
+                        <!-- dropdown -->
+                        <div
+                            class="nav-dropdown hidden absolute mt-2 w-44 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-2">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">শিক্ষক তালিকা</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">নিয়োগ তথ্য</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button type="button"
+                            class="nav-dropdown-btn inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:text-green-700 focus:outline-none"
+                            aria-expanded="false">
+                            শিক্ষার্থী
+                            <img src="/assets/ArrowdownIcon.svg" alt="" class="w-3 h-3" aria-hidden="true" />
+                        </button>
+                        <div
+                            class="nav-dropdown hidden absolute mt-2 w-44 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-2">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">রেজিস্ট্রেশন</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">অফিস আদেশ</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button type="button"
+                            class="nav-dropdown-btn inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:text-green-700 focus:outline-none"
+                            aria-expanded="false">
+                            পরীক্ষার ফলাফল
+                            <img src="/assets/ArrowdownIcon.svg" alt="" class="w-3 h-3" aria-hidden="true" />
+                        </button>
+                        <div
+                            class="nav-dropdown hidden absolute mt-2 w-44 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 py-2">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">সর্বশেষ ফলাফল</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">পূর্বের ফলাফল</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:text-green-700">ছবির গ্যালারী</a>
+                    <a href="#" class="px-4 py-2 text-sm text-gray-700 hover:text-green-700">আমাদের সম্পর্কে</a>
+                </nav>
+
+                <!-- RIGHT: auth button + mobile hamburger -->
+                <div class="flex items-center gap-3">
+                    <!-- login / logout button -->
+                    <button
+                        class="hidden md:inline-flex items-center gap-2 border border-green-800 text-green-800 px-4 py-1 rounded-full text-sm font-medium hover:bg-green-50">
+                        <img src="/assets/LogoutIcon.svg" alt="" class="w-4 h-4" aria-hidden="true" />
+                        লগ ইন
+                    </button>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuButton"
+                        class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
+                        aria-expanded="false" aria-controls="mobileMenu">
+                        <!-- hamburger -->
+                        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6">
-          <a class="text-sm hover:text-green-600" href="#about">About</a>
-          <a class="text-sm hover:text-green-600" href="#news">News</a>
-          <a class="text-sm hover:text-green-600" href="#team">Team</a>
-          <a class="text-sm hover:text-green-600" href="#gallery">Gallery</a>
-        </nav>
+        <!-- MOBILE MENU (hidden on md+) -->
+        <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
+            <div class="px-4 py-3 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-full bg-green-800 text-white text-center text-sm">হোম</a>
 
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button id="mobileMenuButton" aria-expanded="false" aria-controls="mobileMenu" class="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400">
-            <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-            <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
+                <!-- collapse-like items -->
+                <button
+                    class="mobile-collapse w-full flex items-center justify-between px-3 py-2 text-left text-sm text-gray-700">
+                    শিক্ষক/শিক্ষিকা
+                    <img src="/assets/ArrowdownIcon.svg" alt="" class="w-3 h-3" />
+                </button>
+                <div class="mobile-panel hidden px-3 text-sm text-gray-600 space-y-1">
+                    <a href="#" class="block py-1">শিক্ষক তালিকা</a>
+                    <a href="#" class="block py-1">নিয়োগ তথ্য</a>
+                </div>
+
+                <button
+                    class="mobile-collapse w-full flex items-center justify-between px-3 py-2 text-left text-sm text-gray-700">
+                    শিক্ষার্থী
+                    <img src="/assets/ArrowdownIcon.svg" alt="" class="w-3 h-3" />
+                </button>
+                <div class="mobile-panel hidden px-3 text-sm text-gray-600 space-y-1">
+                    <a href="#" class="block py-1">রেজিস্ট্রেশন</a>
+                    <a href="#" class="block py-1">অফিস আদেশ</a>
+                </div>
+
+                <a href="#" class="block px-3 py-2 text-sm text-gray-700">ছবির গ্যালারী</a>
+                <a href="#" class="block px-3 py-2 text-sm text-gray-700">আমাদের সম্পর্কে</a>
+
+                <!-- mobile login button -->
+                <button
+                    class="w-full mt-2 flex items-center justify-center gap-2 border border-green-800 text-green-800 px-3 py-2 rounded-full text-sm">
+                    <img src="/assets/LogoutIcon.svg" alt="" class="w-4 h-4" />
+                    লগ ইন
+                </button>
+            </div>
         </div>
-      </div>
-    </div>
+    </header>
 
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t">
-      <div class="px-4 py-3 space-y-2">
-        <a class="block text-sm" href="#about">About</a>
-        <a class="block text-sm" href="#news">News</a>
-        <a class="block text-sm" href="#team">Team</a>
-        <a class="block text-sm" href="#gallery">Gallery</a>
-      </div>
-    </div>
-  </header>
+    <!-- MAIN -->
+    <main id="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
 
-  <!-- MAIN -->
-  <main id="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+        <!-- HERO -->
+        <section class="relative rounded-lg overflow-hidden bg-green-700 text-white">
+            <div class="absolute inset-0">
+                <img src="/path/to/hero-image.jpg" alt="Students or hero" class="w-full h-full object-cover opacity-60"
+                    loading="lazy">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-green-900/60"></div>
+            </div>
 
-    <!-- HERO -->
-    <section class="relative rounded-lg overflow-hidden bg-green-700 text-white">
-      <div class="absolute inset-0">
-        <img src="/path/to/hero-image.jpg" alt="Students or hero" class="w-full h-full object-cover opacity-60" loading="lazy">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-green-900/60"></div>
-      </div>
+            <div class="relative z-10 max-w-6xl mx-auto py-20 px-6 lg:px-12">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">শিক্ষাই শক্তি, শিক্ষা দিয়ে
+                    এগিয়ে চল</h1>
+                <p class="mt-4 max-w-2xl text-lg sm:text-xl">বর্ণনা থাকবে এখানে — ছোট করে সারাংশ। important CTA and
+                    short promise.</p>
 
-      <div class="relative z-10 max-w-6xl mx-auto py-20 px-6 lg:px-12">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">শিক্ষাই শক্তি, শিক্ষা দিয়ে এগিয়ে চল</h1>
-        <p class="mt-4 max-w-2xl text-lg sm:text-xl">বর্ণনা থাকবে এখানে — ছোট করে সারাংশ। important CTA and short promise.</p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="#about"
+                        class="inline-flex items-center gap-2 bg-white text-green-700 px-4 py-2 rounded-md font-medium shadow hover:shadow-md">আরও
+                        জানুন</a>
+                    <a href="#news"
+                        class="inline-flex items-center gap-2 border border-white/30 px-4 py-2 rounded-md text-white hover:bg-white/10">সংবাদাবলী</a>
+                </div>
+            </div>
+        </section>
 
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#about" class="inline-flex items-center gap-2 bg-white text-green-700 px-4 py-2 rounded-md font-medium shadow hover:shadow-md">আরও জানুন</a>
-          <a href="#news" class="inline-flex items-center gap-2 border border-white/30 px-4 py-2 rounded-md text-white hover:bg-white/10">সংবাদাবলী</a>
+        <!-- Two-column section: news / stats -->
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+            <!-- Left: wide card -->
+            <article class="lg:col-span-2 bg-white shadow rounded-lg overflow-hidden">
+                <img src="/path/to/building.jpg" alt="Institution building" class="w-full h-56 object-cover"
+                    loading="lazy">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold">নোটিশ / প্রতিষ্ঠান সম্পর্কে</h2>
+                    <p class="mt-3 text-gray-600">এই অংশে প্রতিষ্ঠানের পরিচিতি, সম্প্রতি ঘোষিত তথ্য, অথবা শিক্ষাগত
+                        বিবরণ। এখানে আপনি যে sample দেখালেন তার মতো টেক্সট রাখতে পারবেন।</p>
+                    <div class="mt-4 flex gap-3">
+                        <a href="#news"
+                            class="text-sm inline-block bg-green-600 text-white px-3 py-2 rounded">বিস্তারিত</a>
+                        <a href="#gallery" class="text-sm inline-block border px-3 py-2 rounded">গ্যালারি</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Right: stats/cards -->
+            <aside class="space-y-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="font-medium">শীর্ষ তথ্য</h3>
+                    <ul class="mt-3 space-y-2 text-sm text-gray-600">
+                        <li class="flex justify-between"><span>কর্মচারী</span><strong>45</strong></li>
+                        <li class="flex justify-between"><span>শিক্ষার্থী</span><strong>1,240</strong></li>
+                        <li class="flex justify-between"><span>ক্লাস</span><strong>18</strong></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="font-medium">দ্রুত লিংক</h3>
+                    <nav class="mt-3 grid gap-2">
+                        <a class="text-sm hover:text-green-600" href="#">রেজিস্ট্রেশন</a>
+                        <a class="text-sm hover:text-green-600" href="#">অফিস কন্ট্যাক্ট</a>
+                        <a class="text-sm hover:text-green-600" href="#">নিয়মাবলী</a>
+                    </nav>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Testimonials / messages -->
+        <section id="news" class="space-y-6">
+            <h2 class="text-2xl font-semibold">প্রশংসাপত্র</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Testimonial card -->
+                <blockquote class="bg-white p-5 rounded-lg shadow">
+                    <p class="text-gray-700">“অসাধারণ পড়াশোনা পরিবেশ — এখানে শিক্ষার প্রতি যত্ন দেখা যায়।”</p>
+                    <footer class="mt-4 text-sm text-gray-600">— জন দাশ, অভিভাবক</footer>
+                </blockquote>
+
+                <blockquote class="bg-white p-5 rounded-lg shadow">
+                    <p class="text-gray-700">“শিক্ষকরা খুবই সহায়ক এবং কাজের প্রতি দায়িত্বশীল।”</p>
+                    <footer class="mt-4 text-sm text-gray-600">— রিতা, alumna</footer>
+                </blockquote>
+
+                <blockquote class="bg-white p-5 rounded-lg shadow">
+                    <p class="text-gray-700">“পরিষ্কার ও সুব্যবस्थित ক্যাম্পাস। বার্ষিক কার্যক্রমগুলো খুবই সফল।”</p>
+                    <footer class="mt-4 text-sm text-gray-600">— মাসুদ, শিক্ষক</footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Team / staff -->
+        <section id="team" class="space-y-6">
+            <h2 class="text-2xl font-semibold">শিক্ষকবৃন্দ</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Staff card -->
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <img src="/path/to/person1.jpg" alt="Teacher 1" class="mx-auto h-28 w-28 rounded-full object-cover"
+                        loading="lazy">
+                    <h3 class="mt-3 font-medium">মোঃ আলি</h3>
+                    <p class="text-sm text-gray-500">বিজ্ঞান শিক্ষক</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <img src="/path/to/person2.jpg" alt="Teacher 2" class="mx-auto h-28 w-28 rounded-full object-cover"
+                        loading="lazy">
+                    <h3 class="mt-3 font-medium">ফাতেমা</h3>
+                    <p class="text-sm text-gray-500">গণিত শিক্ষক</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <img src="/path/to/person3.jpg" alt="Teacher 3" class="mx-auto h-28 w-28 rounded-full object-cover"
+                        loading="lazy">
+                    <h3 class="mt-3 font-medium">কাজল</h3>
+                    <p class="text-sm text-gray-500">ইংরেজি শিক্ষক</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow text-center">
+                    <img src="/path/to/person4.jpg" alt="Teacher 4" class="mx-auto h-28 w-28 rounded-full object-cover"
+                        loading="lazy">
+                    <h3 class="mt-3 font-medium">রফিউল</h3>
+                    <p class="text-sm text-gray-500">আইসিটি শিক্ষক</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery with highlighted block -->
+        <section id="gallery" class="space-y-6">
+            <h2 class="text-2xl font-semibold">ইভেন্ট গ্যালারি</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <img src="/path/to/event1.jpg" alt="Event 1" class="w-full h-40 object-cover rounded-lg shadow"
+                        loading="lazy">
+                    <img src="/path/to/event2.jpg" alt="Event 2" class="w-full h-40 object-cover rounded-lg shadow"
+                        loading="lazy">
+                    <img src="/path/to/event3.jpg" alt="Event 3" class="w-full h-40 object-cover rounded-lg shadow"
+                        loading="lazy">
+                    <img src="/path/to/event4.jpg" alt="Event 4" class="w-full h-40 object-cover rounded-lg shadow"
+                        loading="lazy">
+                </div>
+
+                <!-- Highlighted large tile -->
+                <div class="bg-yellow-50 rounded-lg border-4 border-yellow-300 p-4 flex items-center justify-center">
+                    <div class="text-center">
+                        <p class="text-gray-700">হাইলাইট ইমেজ</p>
+                        <div
+                            class="mt-3 w-40 h-40 bg-white rounded shadow flex items-center justify-center text-gray-400">
+                            Image</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <a href="#" class="flex items-center gap-3 mb-4">
+                    <img src="/path/to/logo-white.png" alt="Logo" class="h-8 w-8">
+                    <span class="font-semibold">Your Site</span>
+                </a>
+                <p class="text-sm text-green-100/80">কী অনুষ্ঠিত হয়, যোগাযোগের তথ্য ও অন্যান্য ছোট বিবরণ এখানে।</p>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">লিংক</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">News</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-semibold mb-3">যোগাযোগ</h4>
+                <address class="not-italic text-sm space-y-2">
+                    <div>ঠিকানা: ১২৩ রোড, শহর</div>
+                    <div>ফোন: ০১২৩৪৫৬৭৮৯</div>
+                    <div>ইমেইল: info@example.com</div>
+                </address>
+            </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Two-column section: news / stats -->
-    <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-      <!-- Left: wide card -->
-      <article class="lg:col-span-2 bg-white shadow rounded-lg overflow-hidden">
-        <img src="/path/to/building.jpg" alt="Institution building" class="w-full h-56 object-cover" loading="lazy">
-        <div class="p-6">
-          <h2 class="text-2xl font-semibold">নোটিশ / প্রতিষ্ঠান সম্পর্কে</h2>
-          <p class="mt-3 text-gray-600">এই অংশে প্রতিষ্ঠানের পরিচিতি, সম্প্রতি ঘোষিত তথ্য, অথবা শিক্ষাগত বিবরণ। এখানে আপনি যে sample দেখালেন তার মতো টেক্সট রাখতে পারবেন।</p>
-          <div class="mt-4 flex gap-3">
-            <a href="#news" class="text-sm inline-block bg-green-600 text-white px-3 py-2 rounded">বিস্তারিত</a>
-            <a href="#gallery" class="text-sm inline-block border px-3 py-2 rounded">গ্যালারি</a>
-          </div>
+        <div class="border-t border-green-700/60">
+            <div
+                class="max-w-7xl mx-auto px-4 py-4 text-sm text-green-100/70 flex flex-col sm:flex-row gap-3 justify-between items-center">
+                <div>© <span id="year"></span> Your Site. All rights reserved.</div>
+                <div class="flex gap-3">
+                    <!-- simple social icons -->
+                    <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
+                    <a href="#" aria-label="Twitter" class="hover:text-white">TW</a>
+                    <a href="#" aria-label="YouTube" class="hover:text-white">YT</a>
+                </div>
+            </div>
         </div>
-      </article>
+    </footer>
 
-      <!-- Right: stats/cards -->
-      <aside class="space-y-4">
-        <div class="bg-white rounded-lg shadow p-4">
-          <h3 class="font-medium">শীর্ষ তথ্য</h3>
-          <ul class="mt-3 space-y-2 text-sm text-gray-600">
-            <li class="flex justify-between"><span>কর্মচারী</span><strong>45</strong></li>
-            <li class="flex justify-between"><span>শিক্ষার্থী</span><strong>1,240</strong></li>
-            <li class="flex justify-between"><span>ক্লাস</span><strong>18</strong></li>
-          </ul>
-        </div>
+    <!-- Small JS: mobile menu + fill year -->
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const iconOpen = document.getElementById('icon-open');
+        const iconClose = document.getElementById('icon-close');
 
-        <div class="bg-white rounded-lg shadow p-4">
-          <h3 class="font-medium">দ্রুত লিংক</h3>
-          <nav class="mt-3 grid gap-2">
-            <a class="text-sm hover:text-green-600" href="#">রেজিস্ট্রেশন</a>
-            <a class="text-sm hover:text-green-600" href="#">অফিস কন্ট্যাক্ট</a>
-            <a class="text-sm hover:text-green-600" href="#">নিয়মাবলী</a>
-          </nav>
-        </div>
-      </aside>
-    </section>
+        mobileBtn?.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileBtn.setAttribute('aria-expanded', String(!isHidden));
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
 
-    <!-- Testimonials / messages -->
-    <section id="news" class="space-y-6">
-      <h2 class="text-2xl font-semibold">প্রশংসাপত্র</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Testimonial card -->
-        <blockquote class="bg-white p-5 rounded-lg shadow">
-          <p class="text-gray-700">“অসাধারণ পড়াশোনা পরিবেশ — এখানে শিক্ষার প্রতি যত্ন দেখা যায়।”</p>
-          <footer class="mt-4 text-sm text-gray-600">— জন দাশ, অভিভাবক</footer>
-        </blockquote>
+        // Desktop dropdown toggles
+        document.querySelectorAll('.nav-dropdown-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const dropdown = btn.nextElementSibling;
+                const isHidden = dropdown.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!isHidden));
+                // close other open dropdowns
+                document.querySelectorAll('.nav-dropdown').forEach(dd => {
+                    if (dd !== dropdown) dd.classList.add('hidden');
+                });
+            });
+        });
 
-        <blockquote class="bg-white p-5 rounded-lg shadow">
-          <p class="text-gray-700">“শিক্ষকরা খুবই সহায়ক এবং কাজের প্রতি দায়িত্বশীল।”</p>
-          <footer class="mt-4 text-sm text-gray-600">— রিতা, alumna</footer>
-        </blockquote>
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            const isInside = e.target.closest('.nav-dropdown') || e.target.closest('.nav-dropdown-btn');
+            if (!isInside) {
+                document.querySelectorAll('.nav-dropdown').forEach(dd => dd.classList.add('hidden'));
+                document.querySelectorAll('.nav-dropdown-btn').forEach(b => b.setAttribute('aria-expanded', 'false'));
+            }
+        });
 
-        <blockquote class="bg-white p-5 rounded-lg shadow">
-          <p class="text-gray-700">“পরিষ্কার ও সুব্যবस्थित ক্যাম্পাস। বার্ষিক কার্যক্রমগুলো খুবই সফল।”</p>
-          <footer class="mt-4 text-sm text-gray-600">— মাসুদ, শিক্ষক</footer>
-        </blockquote>
-      </div>
-    </section>
+        // Mobile collapse panels
+        document.querySelectorAll('.mobile-collapse').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const panel = btn.nextElementSibling;
+                panel.classList.toggle('hidden');
+            });
+        });
+        // Mobile menu toggle
+        // (Already declared above, so this block is removed)
 
-    <!-- Team / staff -->
-    <section id="team" class="space-y-6">
-      <h2 class="text-2xl font-semibold">শিক্ষকবৃন্দ</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        <!-- Staff card -->
-        <div class="bg-white p-4 rounded-lg shadow text-center">
-          <img src="/path/to/person1.jpg" alt="Teacher 1" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
-          <h3 class="mt-3 font-medium">মোঃ আলি</h3>
-          <p class="text-sm text-gray-500">বিজ্ঞান শিক্ষক</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow text-center">
-          <img src="/path/to/person2.jpg" alt="Teacher 2" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
-          <h3 class="mt-3 font-medium">ফাতেমা</h3>
-          <p class="text-sm text-gray-500">গণিত শিক্ষক</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow text-center">
-          <img src="/path/to/person3.jpg" alt="Teacher 3" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
-          <h3 class="mt-3 font-medium">কাজল</h3>
-          <p class="text-sm text-gray-500">ইংরেজি শিক্ষক</p>
-        </div>
-
-        <div class="bg-white p-4 rounded-lg shadow text-center">
-          <img src="/path/to/person4.jpg" alt="Teacher 4" class="mx-auto h-28 w-28 rounded-full object-cover" loading="lazy">
-          <h3 class="mt-3 font-medium">রফিউল</h3>
-          <p class="text-sm text-gray-500">আইসিটি শিক্ষক</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery with highlighted block -->
-    <section id="gallery" class="space-y-6">
-      <h2 class="text-2xl font-semibold">ইভেন্ট গ্যালারি</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <img src="/path/to/event1.jpg" alt="Event 1" class="w-full h-40 object-cover rounded-lg shadow" loading="lazy">
-          <img src="/path/to/event2.jpg" alt="Event 2" class="w-full h-40 object-cover rounded-lg shadow" loading="lazy">
-          <img src="/path/to/event3.jpg" alt="Event 3" class="w-full h-40 object-cover rounded-lg shadow" loading="lazy">
-          <img src="/path/to/event4.jpg" alt="Event 4" class="w-full h-40 object-cover rounded-lg shadow" loading="lazy">
-        </div>
-
-        <!-- Highlighted large tile -->
-        <div class="bg-yellow-50 rounded-lg border-4 border-yellow-300 p-4 flex items-center justify-center">
-          <div class="text-center">
-            <p class="text-gray-700">হাইলাইট ইমেজ</p>
-            <div class="mt-3 w-40 h-40 bg-white rounded shadow flex items-center justify-center text-gray-400">Image</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="bg-green-800 text-white">
-    <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div>
-        <a href="#" class="flex items-center gap-3 mb-4">
-          <img src="/path/to/logo-white.png" alt="Logo" class="h-8 w-8">
-          <span class="font-semibold">Your Site</span>
-        </a>
-        <p class="text-sm text-green-100/80">কী অনুষ্ঠিত হয়, যোগাযোগের তথ্য ও অন্যান্য ছোট বিবরণ এখানে।</p>
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3">লিংক</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="hover:underline">About</a></li>
-          <li><a href="#" class="hover:underline">News</a></li>
-          <li><a href="#" class="hover:underline">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-semibold mb-3">যোগাযোগ</h4>
-        <address class="not-italic text-sm space-y-2">
-          <div>ঠিকানা: ১২৩ রোড, শহর</div>
-          <div>ফোন: ০১২৩৪৫৬৭৮৯</div>
-          <div>ইমেইল: info@example.com</div>
-        </address>
-      </div>
-    </div>
-
-    <div class="border-t border-green-700/60">
-      <div class="max-w-7xl mx-auto px-4 py-4 text-sm text-green-100/70 flex flex-col sm:flex-row gap-3 justify-between items-center">
-        <div>© <span id="year"></span> Your Site. All rights reserved.</div>
-        <div class="flex gap-3">
-          <!-- simple social icons -->
-          <a href="#" aria-label="Facebook" class="hover:text-white">FB</a>
-          <a href="#" aria-label="Twitter" class="hover:text-white">TW</a>
-          <a href="#" aria-label="YouTube" class="hover:text-white">YT</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Small JS: mobile menu + fill year -->
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('mobileMenuButton');
-    const menu = document.getElementById('mobileMenu');
-    const iconOpen = document.getElementById('icon-open');
-    const iconClose = document.getElementById('icon-close');
-
-    btn && btn.addEventListener('click', () => {
-      const isHidden = menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', String(isHidden));
-      iconOpen.classList.toggle('hidden');
-      iconClose.classList.toggle('hidden');
-    });
-
-    // Fill current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        // Fill current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
