@@ -164,7 +164,8 @@
         <!-- HERO -->
         <section class="relative rounded-lg overflow-hidden" style="height: 384px;">
             <div class="absolute inset-0">
-                <img src="/assets/hero_banner.jpg" alt="Students celebrating" class="w-full h-full object-cover opacity-80">
+                <img src="/assets/hero_banner.jpg" alt="Students celebrating"
+                    class="w-full h-full object-cover opacity-80">
             </div>
 
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black"></div>
@@ -178,41 +179,114 @@
         </section>
 
         <!-- Two-column section: news / stats -->
-        <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-            <!-- Left: wide card -->
-            <article class="lg:col-span-2 bg-white shadow rounded-lg overflow-hidden">
-                <img src="/assets//institute.png" alt="Institution building" class="w-full h-[386px] object-cover"
-                    loading="lazy">
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+            <article class="lg:col-span-2 bg-white shadow-lg rounded-xl overflow-hidden">
+                <img src="/assets/institute.png" alt="Photo of the institution building"
+                    class="w-full h-[386px] object-cover" loading="lazy">
                 <div class="p-6">
-                    <h2 class="text-2xl font-semibold">নোটিশ / প্রতিষ্ঠান সম্পর্কে</h2>
-                    <p class="mt-3 text-gray-600">এই অংশে প্রতিষ্ঠানের পরিচিতি, সম্প্রতি ঘোষিত তথ্য, অথবা শিক্ষাগত
-                        বিবরণ। এখানে আপনি যে sample দেখালেন তার মতো টেক্সট রাখতে পারবেন।</p>
-                    <div class="mt-4 flex gap-3">
-                        <a href="#news"
-                            class="text-sm inline-block bg-green-600 text-white px-3 py-2 rounded">বিস্তারিত</a>
-                        <a href="#gallery" class="text-sm inline-block border px-3 py-2 rounded">গ্যালারি</a>
+                    <h2 class="text-2xl font-bold text-gray-800">প্রতিষ্ঠান সম্পর্কে</h2>
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        আমাদের কলেজটি দেশের অন্যতম সেরা একটি শিক্ষা প্রতিষ্ঠান। প্রতিষ্ঠার পর থেকে, আমরা মানসম্মত শিক্ষা
+                        প্রদান এবং শিক্ষার্থীদের নৈতিক বিকাশে মনোনিবেশ করে আসছি। আমাদের রয়েছে একদল অভিজ্ঞ শিক্ষক এবং
+                        আধুনিক সুযোগ-সুবিধা, যা শিক্ষার্থীদের জ্ঞানার্জন এবং ব্যক্তিগত বিকাশে সহায়তা করে। আমরা বিশ্বাস
+                        করি, প্রতিটি শিক্ষার্থীর মধ্যেই লুকিয়ে আছে অপার সম্ভাবনা।
+                    </p>
+                    <div class="mt-6">
+                        <a href="#about-details"
+                            class="inline-flex items-center justify-center bg-green-600 text-white font-semibold px-5 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                            বিস্তারিত পড়ুন
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </article>
 
-            <!-- Right: stats/cards -->
-            <aside class="space-y-4">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <h3 class="font-medium">শীর্ষ তথ্য</h3>
-                    <ul class="mt-3 space-y-2 text-sm text-gray-600">
-                        <li class="flex justify-between"><span>কর্মচারী</span><strong>45</strong></li>
-                        <li class="flex justify-between"><span>শিক্ষার্থী</span><strong>1,240</strong></li>
-                        <li class="flex justify-between"><span>ক্লাস</span><strong>18</strong></li>
+            <aside class="bg-white shadow-lg rounded-xl p-5">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">নোটিশ ও লিঙ্কসমূহ</h3>
+
+                <div class="border-b border-gray-200">
+                    <nav class="-mb-px flex space-x-6">
+                        <a href="#"
+                            class="whitespace-nowrap py-3 px-1 border-b-2 font-medium text-sm text-green-600 border-green-500"
+                            aria-current="page">
+                            নোটিশ বোর্ড
+                        </a>
+                        <a href="#"
+                            class="whitespace-nowrap py-3 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                            গুরুত্বপূর্ণ লিঙ্ক
+                        </a>
+                        <a href="#"
+                            class="whitespace-nowrap py-3 px-1 border-b-2 border-transparent font-medium text-sm text-gray-500 hover:text-gray-700 hover:border-gray-300">
+                            অন্যান্য
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="mt-5">
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between gap-4 p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-5 w-5" alt="Notice Icon" />
+                                <p class="text-sm text-gray-900">আগামীকাল মহান স্বাধীনতা দিবস উপলক্ষে স্কুল এবং কলেজ
+                                    বন্ধ থাকবে।</p>
+                            </div>
+                            <a href="#"
+                                class="flex-shrink-0 text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full hover:bg-green-200">বিস্তারিত</a>
+                        </li>
+                        <li class="flex items-center justify-between gap-4 p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-5 w-5" alt="Notice Icon" />
+                                <p class="text-sm text-gray-900">২০২৪ ভর্তি সংক্রান্ত জরুরী বিজ্ঞপ্তি!</p>
+                            </div>
+                            <a href="#"
+                                class="flex-shrink-0 text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full hover:bg-green-200">বিস্তারিত</a>
+                        </li>
+                        <li class="flex items-center justify-between gap-4 p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-5 w-5" alt="Notice Icon" />
+                                <p class="text-sm text-gray-900">বেতন সংক্রান্ত জরুরী বিজ্ঞপ্তি!</p>
+                            </div>
+                            <a href="#"
+                                class="flex-shrink-0 text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full hover:bg-green-200">বিস্তারিত</a>
+                        </li>
+                        <li class="flex items-center justify-between gap-4 p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-5 w-5" alt="Notice Icon" />
+                                <p class="text-sm text-gray-900">পহেলা বৈশাখ উপলক্ষে আগামীকাল স্কুল ও কলেজ বন্ধ থাকবে।
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="flex-shrink-0 text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full hover:bg-green-200">বিস্তারিত</a>
+                        </li>
+                        <li class="flex items-center justify-between gap-4 p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center gap-3">
+                                <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-5 w-5" alt="Notice Icon" />
+                                <p class="text-sm text-gray-900">পহেলা বৈশাখ উপলক্ষে আগামীকাল স্কুল ও কলেজ বন্ধ থাকবে।
+                                </p>
+                            </div>
+                            <a href="#"
+                                class="flex-shrink-0 text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full hover:bg-green-200">বিস্তারিত</a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="bg-white rounded-lg shadow p-4">
-                    <h3 class="font-medium">দ্রুত লিংক</h3>
-                    <nav class="mt-3 grid gap-2">
-                        <a class="text-sm hover:text-green-600" href="#">রেজিস্ট্রেশন</a>
-                        <a class="text-sm hover:text-green-600" href="#">অফিস কন্ট্যাক্ট</a>
-                        <a class="text-sm hover:text-green-600" href="#">নিয়মাবলী</a>
-                    </nav>
+                <div class="mt-5">
+                    <a href="#all-notices"
+                        class="w-full flex items-center justify-center bg-green-600 text-white font-semibold px-5 py-3 rounded-lg hover:bg-green-700 transition-colors duration-300">
+                        সকল নোটিশ
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </a>
                 </div>
             </aside>
         </section>
