@@ -292,7 +292,7 @@
         </section>
 
         <!-- Testimonials / messages -->
-        <section id="news" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <section id="news" class="relative py-8">
             <div class="flex items-start justify-between mb-6">
                 <h2 class="text-3xl font-extrabold">স্কুল পরিচালকদের বাণী</h2>
 
@@ -454,34 +454,164 @@
             </div>
         </section>
 
-        <!-- Gallery with highlighted block -->
-        <section id="gallery" class="space-y-6">
-            <h2 class="text-2xl font-semibold">ইভেন্ট গ্যালারি</h2>
+        <!-- Gallery (responsive) -->
+        <section id="gallery" class="py-8">
+            <h2 class="text-3xl font-semibold mb-6">ছবি এবং ভিডিও গ্যালারী</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <img src="/assets/gallery1.png" alt="Event 1" class="w-full h-40 object-cover rounded-lg shadow"
-                        loading="lazy">
-                    <img src="/assets/gallery2.png" alt="Event 2" class="w-full h-40 object-cover rounded-lg shadow"
-                        loading="lazy">
-                    <img src="/assets/gallery3.png" alt="Event 3" class="w-full h-40 object-cover rounded-lg shadow"
-                        loading="lazy">
-                    <img src="/assets/gallery4.png" alt="Event 4" class="w-full h-40 object-cover rounded-lg shadow"
-                        loading="lazy">
+                <!-- LEFT: images (3 of 4 columns) -->
+                <div class="md:col-span-3">
+                    <!-- Top row: two medium thumbnails -->
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <img src="/assets/gallery1.png" alt="Event 1"
+                            class="w-full h-40 object-cover rounded-lg shadow-md" loading="lazy">
+                        <img src="/assets/gallery2.png" alt="Event 2"
+                            class="w-full h-40 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+
+                    <!-- Wide panorama row -->
+                    <div class="mb-4">
+                        <img src="/assets/gallery3.png" alt="Event 3"
+                            class="w-full h-56 object-cover rounded-lg shadow-md" loading="lazy">
+                    </div>
+
+                    <!-- Bottom row: three small thumbnails -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <img src="/assets/gallery4.png" alt="Event 4"
+                            class="w-full h-28 object-cover rounded-lg shadow-sm" loading="lazy">
+                        <img src="/assets/gallery4.png" alt="Event 5"
+                            class="w-full h-28 object-cover rounded-lg shadow-sm" loading="lazy">
+                        <img src="/assets/gallery4.png" alt="Event 6"
+                            class="w-full h-28 object-cover rounded-lg shadow-sm" loading="lazy">
+                    </div>
                 </div>
 
-                <!-- Highlighted large tile -->
-                <div class="bg-yellow-50 rounded-lg border-4 border-yellow-300 p-4 flex items-center justify-center">
-                    <div class="text-center">
-                        <p class="text-gray-700">হাইলাইট ইমেজ</p>
-                        <div
-                            class="mt-3 w-40 h-40 bg-white rounded shadow flex items-center justify-center text-gray-400">
-                            Image</div>
-                    </div>
+                <!-- RIGHT: two stacked highlighted tiles (1 of 4 columns) -->
+                <div class="space-y-4">
+                    <!-- top video tile -->
+                    <a href="#"
+                        class="block bg-gray-50 rounded-lg border border-green-100 p-6 flex items-center justify-center min-h-[220px]">
+                        <div class="flex flex-col items-center">
+                            <!-- optional caption above -->
+                            <p class="text-gray-600 mb-3">ভিডিও হাইলাইট</p>
+
+                            <!-- play circle -->
+                            <div class="w-20 h-20 rounded-full bg-green-800 flex items-center justify-center shadow-md">
+                                <!-- triangle icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- bottom video tile -->
+                    <a href="#"
+                        class="block bg-gray-50 rounded-lg border border-green-100 p-6 flex items-center justify-center min-h-[220px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-gray-600 mb-3">ভিডিও হাইলাইট</p>
+                            <div class="w-20 h-20 rounded-full bg-green-800 flex items-center justify-center shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Students carousel section -->
+        <section id="top-students" class="bg-emerald-50/60 py-10">
+            <div class="">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-slate-900">সেরা ছাত্র/ছাত্রী</h2>
+
+                <div class="relative">
+                    <!-- Left arrow -->
+                    <button id="students-prev"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-md bg-white/90 shadow flex items-center justify-center"
+                        aria-label="Previous">
+                        <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </button>
+
+                    <!-- Carousel (scrollable) -->
+                    <div id="students-track"
+                        class="flex gap-6 overflow-x-hidden scroll-smooth py-2 pl-12 pr-12 md:pl-4 md:pr-4 snap-x snap-mandatory scrollbar-hide">
+
+                        <!-- Card (repeat) -->
+                        <article
+                            class="snap-start flex-shrink-0 w-[80%] sm:w-64 md:w-64 lg:w-72 bg-white rounded-2xl p-4 shadow-sm border border-white/60">
+                            <div class="overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                                <img src="/assets/studebt1.png" alt="ছাত্র ১" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h3 class="text-lg font-bold leading-tight text-slate-900">রাফিক হোসেন</h3>
+                                <p class="mt-2 text-sm text-slate-500">ক্লাস-১ • রোল নং: ১ • সাল: ২০২৩</p>
+                            </div>
+                        </article>
+
+                        <article
+                            class="snap-start flex-shrink-0 w-[80%] sm:w-64 md:w-64 lg:w-72 bg-white rounded-2xl p-4 shadow-sm border border-white/60">
+                            <div class="overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                                <img src="/assets/student2.png" alt="ছাত্রী ২" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h3 class="text-lg font-bold leading-tight text-slate-900">তানিয়া আক্তার</h3>
+                                <p class="mt-2 text-sm text-slate-500">ক্লাস-১০ • রোল নং: ২ • সাল: ২০২৪</p>
+                            </div>
+                        </article>
+
+                        <article
+                            class="snap-start flex-shrink-0 w-[80%] sm:w-64 md:w-64 lg:w-72 bg-white rounded-2xl p-4 shadow-sm border border-white/60">
+                            <div class="overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                                <img src="/assets/student3.png" alt="ছাত্র ৩" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h3 class="text-lg font-bold leading-tight text-slate-900">ইমরান হোসেন</h3>
+                                <p class="mt-2 text-sm text-slate-500">ক্লাস-১ • রোল নং: ৩ • সাল: ২০২৩</p>
+                            </div>
+                        </article>
+
+                        <article
+                            class="snap-start flex-shrink-0 w-[80%] sm:w-64 md:w-64 lg:w-72 bg-white rounded-2xl p-4 shadow-sm border border-white/60">
+                            <div class="overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                                <img src="/assets/student4.png" alt="ছাত্র ৪" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h3 class="text-lg font-bold leading-tight text-slate-900">রাফি আহমেদ</h3>
+                                <p class="mt-2 text-sm text-slate-500">ক্লাস-১ • রোল নং: ৪ • সাল: ২০২৩</p>
+                            </div>
+                        </article>
+
+                        <article
+                            class="snap-start flex-shrink-0 w-[80%] sm:w-64 md:w-64 lg:w-72 bg-white rounded-2xl p-4 shadow-sm border border-white/60">
+                            <div class="overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                                <img src="/assets/student2.png" alt="ছাত্র ৪" class="w-full h-full object-cover block">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <h3 class="text-lg font-bold leading-tight text-slate-900">ইমরান আহমেদ</h3>
+                                <p class="mt-2 text-sm text-slate-500">ক্লাস-১ • রোল নং: ৪ • সাল: ২০২৩</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Right arrow -->
+                    <button id="students-next"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-md bg-white/90 shadow flex items-center justify-center"
+                        aria-label="Next">
+                        <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -577,6 +707,38 @@
 
         // Fill current year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        (function () {
+            const prev = document.getElementById('students-prev');
+            const next = document.getElementById('students-next');
+            const track = document.getElementById('students-track');
+
+            function scrollByPage(direction = 1) {
+                // scroll amount -> visible width of track (so arrows move approximately one "view")
+                const gap = parseFloat(getComputedStyle(track).gap) || 24;
+                const card = track.querySelector('article');
+                if (!card) return;
+                const cardWidth = card.getBoundingClientRect().width + gap;
+                // number of cards visible on large screens ~ 4; adjust if needed by dividing by 4
+                const visibleCards = Math.max(1, Math.floor(track.getBoundingClientRect().width / cardWidth));
+                const amount = cardWidth * visibleCards;
+                track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+            }
+
+            prev.addEventListener('click', () => scrollByPage(-1));
+            next.addEventListener('click', () => scrollByPage(1));
+
+            // Optional: hide arrows on small screens or when scroll not necessary
+            function updateArrows() {
+                const atStart = track.scrollLeft <= 5;
+                const atEnd = track.scrollWidth - Math.ceil(track.clientWidth + track.scrollLeft) <= 5;
+                prev.style.visibility = atStart ? 'hidden' : 'visible';
+                next.style.visibility = atEnd ? 'hidden' : 'visible';
+            }
+            track.addEventListener('scroll', updateArrows);
+            window.addEventListener('resize', updateArrows);
+            updateArrows();
+        })();
     </script>
 </body>
 
