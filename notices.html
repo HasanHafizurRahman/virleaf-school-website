@@ -35,7 +35,7 @@
                 <nav class="hidden md:flex items-center gap-3 flex-1 justify-center">
                     <!-- Home (active pill) -->
                     <a href="#"
-                        class="inline-flex items-center px-6 py-2 rounded-full bg-green-800 text-white text-sm font-medium shadow-sm">হোম</a>
+                        class="inline-flex items-center px-6 py-2 rounded-full bg-[#004731] text-white text-sm font-medium shadow-sm">হোম</a>
 
                     <!-- Menu items with dropdown arrows -->
                     <div class="relative">
@@ -117,7 +117,7 @@
         <!-- MOBILE MENU (hidden on md+) -->
         <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
             <div class="px-4 py-3 space-y-1">
-                <a href="#" class="block px-3 py-2 rounded-full bg-green-800 text-white text-center text-sm">হোম</a>
+                <a href="#" class="block px-3 py-2 rounded-full bg-[#004731] text-white text-center text-sm">হোম</a>
 
                 <!-- collapse-like items -->
                 <button
@@ -153,47 +153,361 @@
         </div>
     </header>
 
-    <!-- ===== MAIN ===== -->
+    <!-- ===== MAIN: Notices (replace your current main with this) ===== -->
     <main id="main" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- top pill and breadcrumb -->
+        <div class="mb-6 flex items-center justify-between gap-4">
+            <span class="inline-block bg-[#004731] text-white px-4 py-2 rounded-full text-sm font-medium">নোটিশ
+                বোর্ড</span>
+            <div class="flex items-center gap-4">
+                <nav class="text-sm text-gray-500" aria-label="breadcrumb">
+                    <ol class="flex items-center gap-2">
+                        <li>মূলপাতা</li>
+                        <li class="text-gray-300">/</li>
+                        <li class="text-gray-700 font-medium">নোটিশ বোর্ড</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
         <div class="bg-white rounded-xl shadow-lg p-6">
-            <div class="flex items-center justify-between mb-4">
-                <h1 class="text-2xl font-bold">সকল নোটিশ</h1>
-                <a href="index.html" class="text-sm text-green-700 hover:underline">হোমে ফিরে যান</a>
+            <!-- tabs + search -->
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex items-center gap-3 overflow-x-auto">
+                    <button data-tab="all"
+                        class="tab-btn px-4 py-2 rounded-full text-emerald-700 text-sm font-medium shadow-sm">সকল
+                        নোটিশ</button>
+                    <button data-tab="admission"
+                        class="tab-btn px-4 py-2 rounded-full text-sm text-gray-600 hover:bg-gray-50">ভর্তি
+                        সংক্রান্ত</button>
+                    <button data-tab="exam"
+                        class="tab-btn px-4 py-2 rounded-full text-sm text-gray-600 hover:bg-gray-50">পরীক্ষা
+                        সংক্রান্ত</button>
+                    <button data-tab="leave"
+                        class="tab-btn px-4 py-2 rounded-full text-sm text-gray-600 hover:bg-gray-50">ছুটি
+                        সংক্রান্ত</button>
+                    <button data-tab="national"
+                        class="tab-btn px-4 py-2 rounded-full text-sm text-gray-600 hover:bg-gray-50">জাতীয়</button>
+                </div>
+
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <div class="relative flex-1 md:flex-none">
+                        <input id="noticeSearch" type="search" placeholder="নোটিশ খুঁজুন..."
+                            class="w-full md:w-72 pl-10 pr-4 py-2 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-emerald-300" />
+                        <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                        </svg>
+                    </div>
+                </div>
             </div>
 
-            <!-- Notices list -->
-            <ul class="space-y-4">
-                <li class="p-4 bg-green-50 rounded-lg flex items-start justify-between gap-4">
+            <!-- top highlighted notice (active) -->
+            <div id="noticesContainer" class="mt-6 space-y-3">
+                <!-- Active item: green-tinted -->
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-[#E5F4F0] shadow-sm border border-emerald-100"
+                    data-category="all">
                     <div class="flex items-start gap-3">
-                        <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-6 w-6" alt="Notice Icon" />
                         <div>
-                            <h3 class="font-semibold">আগামীকাল মহান স্বাধীনতা দিবস উপলক্ষে স্কুল এবং কলেজ বন্ধ থাকবে।
-                            </h3>
-                            <p class="text-sm text-gray-600 mt-1">তারিখ: ২৬ মার্চ ২০২৫ • প্রকাশিত: অফিস</p>
+                            <h3 class="font-semibold text-gray-900">সকল কোর্সের প্রথম সাপ্তাহিক পরীক্ষা ২০২৩ এর ফলাফল
+                                প্রকাশিত</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ১২ সেপ্টেম্বর, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">জরুরি</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="#"
-                        class="text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full">বিস্তারিত</a>
-                </li>
 
-                <li class="p-4 bg-green-50 rounded-lg flex items-start justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Regular list items (repeatable) -->
+                <!-- Notice template (you'll replace text/image paths with your real data) -->
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
                     <div class="flex items-start gap-3">
-                        <img src="assets/NoticeIcon.svg" class="flex-shrink-0 h-6 w-6" alt="Notice Icon" />
                         <div>
-                            <h3 class="font-semibold">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
-                            <p class="text-sm text-gray-600 mt-1">তারিখ: ০১ জানুয়ারী ২০২৫</p>
+                            <h3 class="font-medium text-gray-800">সকল কোর্সের প্রথম সাপ্তাহিক পরীক্ষা ২০২৩ এর ফলাফল
+                                প্রকাশিত</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ১০ সেপ্টেম্বর, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">নোটিস</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="#"
-                        class="text-sm bg-green-100 text-green-800 font-semibold px-4 py-1 rounded-full">বিস্তারিত</a>
-                </li>
 
-                <!-- add more notices the same way -->
-            </ul>
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
 
-            <!-- Pagination or load more -->
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+
+                <!-- duplicate a few to match picture -->
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
+                    <div class="flex items-start gap-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ০১ জানুয়ারি, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">বিজ্ঞপ্তি</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
+                    <div class="flex items-start gap-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ০১ জানুয়ারি, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">বিজ্ঞপ্তি</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
+                    <div class="flex items-start gap-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ০১ জানুয়ারি, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">বিজ্ঞপ্তি</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
+                    <div class="flex items-start gap-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ০১ জানুয়ারি, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">বিজ্ঞপ্তি</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+                <article
+                    class="notice-item flex items-center justify-between gap-4 rounded-lg p-4 bg-white shadow-sm border border-gray-100"
+                    data-category="all">
+                    <div class="flex items-start gap-3">
+                        <div>
+                            <h3 class="font-medium text-gray-800">২০২৪ ভর্তি সংক্রান্ত জরুরি বিজ্ঞপ্তি!</h3>
+                            <div class="mt-1 text-sm text-gray-500 flex items-center gap-3">
+                                <div class="flex items-center gap-1">
+                                    <img src="assets/CalendarIcon.svg" class="h-4 w-4" alt="date">
+                                    <span>প্রকাশিত: ০১ জানুয়ারি, ২০২৪</span>
+                                </div>
+                                <span
+                                    class="inline-block text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">বিজ্ঞপ্তি</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <button
+                            class="view-btn inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-700 hover:bg-gray-50">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            পুরোটা দেখুন
+                        </button>
+
+                        <a href="#"
+                            class="download-btn inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#004731] text-white text-sm">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 3v12m0 0l4-4m-4 4l-4-4" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21H3" />
+                            </svg>
+                            ডাউনলোড
+                        </a>
+                    </div>
+                </article>
+
+                <!-- more items: copy-paste as needed -->
+            </div>
+
+            <!-- load more -->
             <div class="mt-6 flex justify-center">
-                <button class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700">আরো লোড করুন</button>
+                <button id="loadMore"
+                    class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-[#CCEAE0] text-[#006747] border">
+                    <svg id="loadSpinner" class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
+                    </svg>
+                    <span id="loadMoreText">আরো বিস্তারিত</span>
+                </button>
             </div>
         </div>
     </main>
@@ -337,6 +651,48 @@
     <!-- scripts (copy small JS you use) -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+        // Minimal JS: tabs, search filter, load more demo
+        // Tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('bg-[#E5F4F0]', 'text-emerald-700', 'shadow-sm'));
+                btn.classList.add('bg-[#E5F4F0]', 'text-emerald-700', 'shadow-sm');
+
+                const cat = btn.dataset.tab;
+                document.querySelectorAll('#noticesContainer .notice-item').forEach(item => {
+                    item.style.display = (cat === 'all' || item.dataset.category === cat) ? 'flex' : 'none';
+                });
+            });
+        });
+        // default active
+        document.querySelector('.tab-btn[data-tab="all"]').classList.add('bg-[#E5F4F0]', 'text-emerald-700', 'shadow-sm');
+
+        // Search
+        document.getElementById('noticeSearch').addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            document.querySelectorAll('#noticesContainer .notice-item').forEach(item => {
+                const text = item.innerText.toLowerCase();
+                item.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
+            });
+        });
+
+        // Load more demo (clones existing items)
+        document.getElementById('loadMore').addEventListener('click', async function () {
+            const spinner = document.getElementById('loadSpinner');
+            const txt = document.getElementById('loadMoreText');
+            spinner.classList.remove('hidden'); txt.textContent = 'লোড হচ্ছে...';
+            // simulate network
+            await new Promise(r => setTimeout(r, 900));
+            spinner.classList.add('hidden'); txt.textContent = 'আরো বিস্তারিত';
+
+            // Append duplicates (demo)
+            const container = document.getElementById('noticesContainer');
+            const sample = container.querySelector('.notice-item');
+            if (sample) {
+                const clone = sample.cloneNode(true);
+                container.appendChild(clone);
+            }
+        });
     </script>
 </body>
 
